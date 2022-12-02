@@ -1,13 +1,12 @@
+const https = require('https');
 var fs = require('fs');
 var url = require('url');
 var http = require('http');
 var querystring = require('querystring');
 var crypto = require('crypto');
-// function gửi yêu cầu(response) từ phía server hoặc nhận yêu cầu (request) của client gửi lên
 function requestHandler(request, response) {
-    // Giả sử địa chỉ yêu cầu firmware http://192.168.162.84:8000/firmware.bin
     switch (request.url) {
-        case "/":
+        case "/update":
             var uriData = url.parse(request.url);
             var pathname = uriData.pathname; // /firmware.bin
             if (pathname == '/firmware.bin') {
