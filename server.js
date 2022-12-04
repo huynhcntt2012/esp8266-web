@@ -6,7 +6,7 @@ var querystring = require('querystring');
 var crypto = require('crypto');
 function requestHandler(request, response) {
     switch (request.url) {
-        case "/update":
+        case "/":
             var uriData = url.parse(request.url);
             var pathname = uriData.pathname; // /firmware.bin
             if (pathname == '/firmware.bin') {
